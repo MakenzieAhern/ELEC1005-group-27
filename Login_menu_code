@@ -1,0 +1,8 @@
+# Button 
+If(
+    !IsBlank(
+        LookUp('Login information', Usernames = Username_Input.Text && Passwords = Password_Input.Text)
+    ), 
+    Navigate(Overview_Screen), 
+    Navigate(Fail_Screen)
+)

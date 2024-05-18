@@ -1,0 +1,3 @@
+SetProperty(Username_Input, "worker")
+SetProperty(Password_Input, "worker1")
+Select(Login_Button)

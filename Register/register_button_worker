@@ -1,0 +1,19 @@
+If(
+    IsBlank(Register_Input_Username.Text) || IsBlank(Register_Input_Password.Text),
+    Notify("Please fill in all fields.", NotificationType.Error),
+        Patch(
+        Worker_Login_information,
+        Defaults(Worker_Login_information),
+        {
+            Title: "Worker",
+            Usernames: Register_Input_Username.Text,
+            Passwords: Register_Input_Password.Text
+        }
+    );
+
+    // Clear the input fields after adding a new record
+    Reset(Register_Input_Username);
+    Reset(Register_Input_Password);
+    Notify("Record added successfully.", NotificationType.Success)
+)
+

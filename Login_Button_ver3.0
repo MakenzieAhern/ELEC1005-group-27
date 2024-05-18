@@ -7,7 +7,11 @@ If(
         !IsBlank(
             LookUp(Worker_Login_information, Usernames = Username_Input.Text && Passwords = Password_Input.Text)
         ),
+        Notify("Login completed!", NotificationType.Success);
         Navigate(Worker_page),
+        Notify("Login information does not match databases.", NotificationType.Error);
         Navigate(Fail_Screen)
     )
-)
+);
+Reset(Username_Input);
+Reset(Password_Input);

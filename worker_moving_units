@@ -1,0 +1,29 @@
+Set(Operation, input_operation.Text);
+Set(To_operation, to_operation.Text);
+// Both inputs have been assigned a variable
+If( 
+    !IsBlank(LookUp('operation_list', Titles = Operation)) && 
+    !IsBlank(LookUp('operation_list', Titles = To_operation)),
+    // checking if both operations are in the list
+    // If they are, Proceed here
+    Patch(
+        'operation_list',
+        LookUp('operation_list', Titles = To_operation),
+        { Units: LookUp('operation_list', Titles = To_operation).Units + 1 }
+    );
+    // the units in next operation increases by one
+    Patch(
+        'operation_list',
+        LookUp('operation_list', Titles = Operation),
+        { Units: LookUp('operation_list', Titles = Operation).Units - 1 }
+    );
+    // the units in the previous operation decreases by one
+    Patch(
+        'operation_list',
+        LookUp('operation_list', Titles = Operation),
+        { Units: LookUp('operation_list', Titles = Operation).Units_Passed + 1 }
+    ),
+    // the Units_passed space increases denoting that a new unit finished the operation
+   Navigate(//failstate
+   )
+)

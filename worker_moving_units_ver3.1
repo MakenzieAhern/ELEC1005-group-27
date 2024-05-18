@@ -23,8 +23,11 @@ If(
         operation_list,
         LookUp(operation_list, Title = from_operation),
         { Units_Passed: LookUp(operation_list, Title = from_operation).Units_Passed + 1 }
-    ),
+    );
     // The Units_Passed space increases denoting that a new unit finished the operation
+    Notify("Unit Passed to next Operation", NotificationType.Success),
     // If one or both Operations are not in the list go here:
+    Notify("Operation does not exist", NotificationType.Error);
     Navigate(Worker_page_fail)
+    
 )

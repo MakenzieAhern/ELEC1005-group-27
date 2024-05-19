@@ -1,0 +1,4 @@
+Select('Button3')
+SetProperty('Username_Input'.Text, "Kenny")
+SetProperty('Password_Input'.Text, "coolguy")
+Select('login_button_loginscreen')

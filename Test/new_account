@@ -1,0 +1,7 @@
+Navigate(Login_Screen)
+Select(Register_button)
+SetProperty(Register_Input_Username.Text, "test1")
+SetProperty(Register_Input_Password.Text,"testing")
+Select(Register_button_admin)
+SetProperty(Username_Input.Text, "test1")
+SetProperty(Password_Input.Text,"testing")

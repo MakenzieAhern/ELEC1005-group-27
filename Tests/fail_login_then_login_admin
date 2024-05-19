@@ -1,0 +1,7 @@
+Navigate(Login_Screen)
+SetProperty(Username_Input.Text,"aobiuf")
+SetProperty(Password_Input.Text,"isdfy")
+Select(login_button_loginscreen)
+SetProperty(Username_Input_1.Text,"admin1")
+SetProperty(Password_Input_1.Text,"admin1")
+Select(Button3)

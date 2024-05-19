@@ -1,0 +1,8 @@
+Navigate(Worker_page)
+SetProperty(input_operation.Text, "Operation8")
+SetProperty(to_operation.Text, "Operation27")
+Select(process_button)
+SetProperty(input_operation_1.Text, "Operation8")
+SetProperty(to_operation_1.Text, "operation9")
+Select(fail_worker_process_button)
+Select(logout_button)

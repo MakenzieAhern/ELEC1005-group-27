@@ -1,18 +1,19 @@
 If(
-    IsBlank(Username_Input_2.Text) || IsBlank(Password_Input_1.Text),
+    IsBlank(Register_Input_Username.Text) || IsBlank(Register_Input_Password.Text),
     Notify("Please fill in all fields.", NotificationType.Error),
         Patch(
         Admin_Login_information,
         Defaults(Admin_Login_information),
         {
             Title: "Admin",
-            Usernames: Username_Input_2.Text,
-            Passwords: Password_Input_1.Text
+            Usernames: Register_Input_Username.Text,
+            Passwords: Register_Input_Password.Text
         }
     );
+	Navigate(Login_Screen)
 
     // Clear the input fields after adding a new record
-    Reset(Username_Input_2);
-    Reset(Password_Input_1);
+    Reset(Register_Input_Username);
+    Reset(Register_Input_Password);
     Notify("Record added successfully.", NotificationType.Success)
 )
